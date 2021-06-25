@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{%block title%}home{%endblock%}</title>
+    <link rel="stylesheet" href="../static/homepage.css">
+</head>
+<body>
+<div class="topnav">
+  <a class="active" href="{{url_for('home')}}">Homepage</a>
+    <a href="{{url_for('about')}}">About Us</a>
+        {%if session['name']==None %}
+            <a href="{{url_for('login')}}">Log In</a>
+        {%else%}
+            <a href="{{url_for('addphone')}}">Add Phone</a>
+            <a href="{{url_for('logout')}}">Log Out</a>
+         {%endif%}
+    <h4 class="user_text">User:   {{session['name']}} </h4>
+
+
+
+</div>
+
+{%block content%}
+<h1 class = "hello_text">გამარჯობა</h1>
+{%for each in allphones:%}
+    <h3 class = "phones">{{each}}</h3>
+{%endfor%}
+{%endblock%}
+
+
+</body>
+</html>

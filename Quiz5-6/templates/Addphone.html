@@ -1,0 +1,16 @@
+{%extends "base.html"%}
+{%block content%}
+<form action="" method="post" class="login">
+
+  <div class="container">
+    <input type="text" placeholder="Enter Phone Name" name="Pname" >
+    <input type="text" placeholder="Enter Phone Price" name="Pprice">
+    <button type="submit" class="addbutton">Add Phone</button>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% for error_text, msg in messages %}
+        <p class="{{error_text}}">{{ msg }}</p>
+      {% endfor %}
+{% endwith %}
+  </div>
+</form>
+{%endblock%}

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>alta</title>
+    <link rel="stylesheet" href="../static/homepage.css">
+</head>
+<body>
+
+<form action="action_page.php" method="post" class="login">
+<div class="topnav1">
+  <a class="active" href="{{url_for('home')}}">Homepage</a>
+    <a href="{{url_for('about')}}">About Us</a>
+      <a href="{{url_for('login')}}">Log In</a>
+    <h4 class="user_text">User:   {{session['name']}} </h4>
+</div>
+<div style="text-align: center;" class="logouttext"><h1>მადლობა ინტერაქციისთვის! სესია დასრულებულია. </h1></div>
+</form>
+
+
+</body>
+</html>
